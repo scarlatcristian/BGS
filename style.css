@@ -17,7 +17,15 @@ body {
   height: 100vh;
 
   font-family: "Open Sans", sans-serif;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Large_bonfire.jpg/640px-Large_bonfire.jpg");
+  background-color: #578bda;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .cursor {

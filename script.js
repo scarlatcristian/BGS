@@ -4,6 +4,7 @@ const btn = document.querySelector(".btn");
 const btnBorder = document.querySelector(".rotate-container");
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
+const particlesJS = document.getElementById("particles-js");
 
 document.addEventListener("mousemove", (e) => {
   const cursor = document.querySelector(".cursor");

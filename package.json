@@ -1,0 +1,22 @@
+{
+  "name": "bgs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarlatcristian/BGS.git"
+  },
+  "author": "cristi scarlat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scarlatcristian/BGS/issues"
+  },
+  "homepage": "https://github.com/scarlatcristian/BGS#readme",
+  "dependencies": {
+    "particles.js": "^2.0.0"
+  }
+}

@@ -44,6 +44,4 @@ btn.addEventListener("click", () => {
   setTimeout(() => {
     text.classList.add("transition");
   }, 500);
-
-  intervalId();
 });

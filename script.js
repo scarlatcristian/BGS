@@ -5,6 +5,12 @@ const btnBorder = document.querySelector(".rotate-container");
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
 
+document.addEventListener("mousemove", (e) => {
+  const cursor = document.querySelector(".cursor");
+  cursor.style.top = `${e.pageY}px`;
+  cursor.style.left = `${e.pageX}px`;
+});
+
 let counter = 0;
 let timer = 2000;
 let intervalId;

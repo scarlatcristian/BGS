@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -13,6 +15,22 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  font-family: "Open Sans", sans-serif;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Large_bonfire.jpg/640px-Large_bonfire.jpg");
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 9999;
 }
 
 .btn {

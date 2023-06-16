@@ -53,7 +53,7 @@ body {
   height: 20rem;
   width: 20rem;
 
-  z-index: 2;
+  z-index: 3;
 }
 
 .btn:hover {
@@ -72,7 +72,7 @@ body {
   width: 22rem;
   height: 22rem;
   transition: all 0.5s ease;
-  z-index: -1;
+  z-index: 1;
 }
 
 @keyframes rotateBorder {
@@ -104,6 +104,8 @@ body {
   transition: all 1s ease-in;
   opacity: 0;
   transform: translateY(10rem);
+
+  z-index: 1;
 }
 
 .transition {

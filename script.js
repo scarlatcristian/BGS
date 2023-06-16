@@ -4,7 +4,6 @@ const btn = document.querySelector(".btn");
 const btnBorder = document.querySelector(".rotate-container");
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
-const particlesJS = document.getElementById("particles-js");
 
 document.addEventListener("mousemove", (e) => {
   const cursor = document.querySelector(".cursor");
@@ -44,4 +43,8 @@ btn.addEventListener("click", () => {
   setTimeout(() => {
     text.classList.add("transition");
   }, 500);
+});
+
+particlesJS.load("particles-js", "particlesjs-config.json", function () {
+  console.log("callback - particles.js config loaded");
 });

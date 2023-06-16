@@ -17,7 +17,7 @@
         "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 3
+        "nb_sides": 5
       },
       "image": {
         "src": "img/github.svg",
@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 3.206824121731046,
+      "speed": 1,
       "direction": "none",
       "random": true,
       "straight": false,

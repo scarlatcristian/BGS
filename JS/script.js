@@ -13,6 +13,10 @@ const bntShopping = document.querySelector(".bnt-shopping");
 const btnSecurity = document.querySelector(".bnt-security");
 const btnMonitoring = document.querySelector(".bnt-monitoring");
 
+const infoShopping = document.querySelector(".info-shopping");
+const infoSecurity = document.querySelector(".info-security");
+const infoMonitoring = document.querySelector(".info-monitoring");
+
 let counter = 0;
 let timer = 700;
 let intervalId;
@@ -90,12 +94,24 @@ const hideBtn = () => {
 
 bntShopping.addEventListener("click", () => {
   hideBtn();
+
+  infoShopping.style.transform = "translateX(0)";
+  infoShopping.style.opacity = "1";
+  infoShopping.style.visibility = "visible";
 });
 
 btnMonitoring.addEventListener("click", () => {
   hideBtn();
+
+  infoShopping.style.transform = "translateX(0)";
+  infoShopping.style.opacity = "1";
+  infoShopping.style.visibility = "visible";
 });
 
 btnSecurity.addEventListener("click", () => {
   hideBtn();
+
+  infoShopping.style.transform = "translateX(0)";
+  infoShopping.style.opacity = "1";
+  infoShopping.style.visibility = "visible";
 });

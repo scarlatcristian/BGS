@@ -7,7 +7,7 @@ const title = document.querySelectorAll(".title");
 const particles = document.getElementById("particles-js");
 
 const btnArrow = document.querySelector(".btn-arrow");
-const test = document.querySelector(".test");
+const cardsContainer = document.querySelector(".cards-container");
 
 let counter = 0;
 let timer = 700;
@@ -51,8 +51,11 @@ btnStart.addEventListener("click", () => {
 // After arrow btn click
 
 btnArrow.addEventListener("click", () => {
-  text.style.transform = "translateX(-50rem)";
+  text.style.transform = "translateX(-100rem)";
   text.style.opacity = "0";
+
+  cardsContainer.style.transform = "translateX(0)";
+  cardsContainer.style.opacity = "1";
   setTimeout(() => {
     text.remove();
   }, 2000);

@@ -4,10 +4,11 @@ const particles = document.getElementById("particles-js");
 const btnStart = document.querySelector(".btn-start-animation");
 const btnBorder = document.querySelector(".rotate-container");
 const video = document.getElementById("video");
+const videoLoop = document.getElementById("video-loop");
 
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
-const btnArrow = document.querySelector(".btn-arrow");
+const btnArrowUp = document.querySelector(".btn-arrow-up");
 
 const cards = document.querySelectorAll(".card");
 const bntShopping = document.querySelector(".bnt-shopping");
@@ -39,13 +40,19 @@ const addClassInterval = () => {
 // After first btn click
 btnStart.addEventListener("click", () => {
   // Initialize the particles
-  particlesJS.load("particles-js", "particlesjs-config.json");
 
   setTimeout(() => {
     particles.style.opacity = 1;
   }, 600);
 
+  video.style.visibility = "visible";
   video.play();
+
+  setTimeout(() => {
+    document.querySelector(".bg-video-loop").style.visibility = "visible";
+    document.querySelector(".bg-video-loop").style.opacity = "1";
+    videoLoop.play();
+  }, 1300);
 
   btnStart.classList.add("scale-down");
   btnBorder.classList.add("scale-down");
@@ -63,7 +70,7 @@ btnStart.addEventListener("click", () => {
 });
 
 // After arrow btn click
-btnArrow.addEventListener("click", () => {
+btnArrowUp.addEventListener("click", () => {
   text.style.transform = "translateY(-25rem)";
   text.style.opacity = "0";
 
@@ -117,3 +124,13 @@ if (btnSecurity !== null) {
     hideBtn();
   });
 }
+
+document.querySelector(".btn-arrow-right").addEventListener("click", () => {
+  cards.forEach((card) => {
+    card.style.transform = "TranslateX(0)";
+    card.style.opacity = "1";
+    card.style.visibility = "visible";
+  });
+
+  infoShopping.classList.remove("active");
+});

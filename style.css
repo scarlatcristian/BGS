@@ -22,6 +22,34 @@ body {
   height: 100vh;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+  visibility: hidden;
+}
+
+.bg-video-loop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+  visibility: hidden;
+  transition: all 1s ease;
+  opacity: 0;
+}
+
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #particles-js {
   position: absolute;
   top: 0;
@@ -194,11 +222,11 @@ body {
   transition: transform 0.3s ease;
 }
 
-.btn:hover i {
-  animation: moveArrowRight 1s;
+.btn-arrow-up:hover i {
+  animation: moveArrowUp 1s;
 }
 
-@keyframes moveArrowRight {
+@keyframes moveArrowUp {
   0% {
     transform: translateY(0);
   }
@@ -211,6 +239,22 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes moveArrowRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(250%);
+  }
+  51% {
+    transform: translateX(-250%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -273,7 +317,7 @@ body {
 
 .info-shopping {
   color: #fff;
-  text-align: start;
+  text-align: center;
 
   position: absolute;
   transform: translateX(100rem);
@@ -282,6 +326,7 @@ body {
   transition: all 2s ease;
 
   width: 50%;
+  z-index: 5;
 }
 
 .info-shopping.active {
@@ -298,6 +343,11 @@ body {
 
 .info-shopping p {
   font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-arrow-right:hover i {
+  animation: moveArrowRight 1s;
 }
 
 @media (max-width: 400px) {
@@ -317,19 +367,4 @@ body {
     flex-direction: column;
     text-align: center;
   }
-}
-
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -100;
-}
-
-.bg-video__content {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }

@@ -6,23 +6,24 @@ const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
 const particles = document.getElementById("particles-js");
 
-const btnArrow = document.querySelector(".arrow");
+const btnArrow = document.querySelector(".btn-arrow");
+const test = document.querySelector(".test");
 
 let counter = 0;
-let timer = 2000;
+let timer = 700;
 let intervalId;
 
 const addClassInterval = () => {
   title.forEach((t) => {
     intervalId = setInterval(() => {
-      if (counter >= 4) {
+      if (counter >= 5) {
         clearInterval(intervalId);
         return;
       }
       t.classList.add("color-change");
       counter++;
     }, timer);
-    timer += 1000;
+    timer += 700;
   });
 };
 
@@ -45,4 +46,14 @@ btnStart.addEventListener("click", () => {
 
     addClassInterval();
   }, 700);
+});
+
+// After arrow btn click
+
+btnArrow.addEventListener("click", () => {
+  text.style.transform = "translateX(-50rem)";
+  text.style.opacity = "0";
+  setTimeout(() => {
+    text.remove();
+  }, 2000);
 });

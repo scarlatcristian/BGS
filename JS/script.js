@@ -9,6 +9,9 @@ const title = document.querySelectorAll(".title");
 const btnArrow = document.querySelector(".btn-arrow");
 
 const cards = document.querySelectorAll(".card");
+const bntShopping = document.querySelector(".bnt-shopping");
+const btnSecurity = document.querySelector(".bnt-security");
+const btnMonitoring = document.querySelector(".bnt-monitoring");
 
 let counter = 0;
 let timer = 700;
@@ -51,7 +54,7 @@ btnStart.addEventListener("click", () => {
 
 // After arrow btn click
 btnArrow.addEventListener("click", () => {
-  text.style.transform = "translateY(-100rem)";
+  text.style.transform = "translateY(-25rem)";
   text.style.opacity = "0";
 
   let counterCard = 0;
@@ -73,4 +76,26 @@ btnArrow.addEventListener("click", () => {
   setTimeout(() => {
     text.remove();
   }, 2000);
+});
+
+// After Technical and online shop button
+
+const hideBtn = () => {
+  cards.forEach((card) => {
+    card.style.transform = "TranslateX(-20rem)";
+    card.style.opacity = "0";
+    card.style.visibility = "hidden";
+  });
+};
+
+bntShopping.addEventListener("click", () => {
+  hideBtn();
+});
+
+btnMonitoring.addEventListener("click", () => {
+  hideBtn();
+});
+
+btnSecurity.addEventListener("click", () => {
+  hideBtn();
 });

@@ -1,13 +1,14 @@
 "use strict";
+const particles = document.getElementById("particles-js");
 
 const btnStart = document.querySelector(".btn-start-animation");
 const btnBorder = document.querySelector(".rotate-container");
+
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
-const particles = document.getElementById("particles-js");
-
 const btnArrow = document.querySelector(".btn-arrow");
-const cardsContainer = document.querySelector(".cards-container");
+
+const cards = document.querySelectorAll(".card");
 
 let counter = 0;
 let timer = 700;
@@ -49,13 +50,26 @@ btnStart.addEventListener("click", () => {
 });
 
 // After arrow btn click
-
 btnArrow.addEventListener("click", () => {
-  text.style.transform = "translateX(-100rem)";
+  text.style.transform = "translateY(-100rem)";
   text.style.opacity = "0";
 
-  cardsContainer.style.transform = "translateX(0)";
-  cardsContainer.style.opacity = "1";
+  let counterCard = 0;
+
+  let cardInterval = setInterval(() => {
+    if (counterCard >= cards.length) {
+      clearInterval(cardInterval);
+    } else {
+      const card = cards[counterCard];
+
+      card.style.visibility = "visible";
+      card.style.transform = "translateX(0)";
+      card.style.opacity = "1";
+
+      counterCard++;
+    }
+  }, 300);
+
   setTimeout(() => {
     text.remove();
   }, 2000);

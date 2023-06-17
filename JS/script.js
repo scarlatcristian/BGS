@@ -38,25 +38,11 @@ btnStart.addEventListener("click", () => {
     btnBorder.style.border = "none";
     btnStart.remove();
     btnBorder.remove();
-  }, 400);
+  }, 700);
 
   setTimeout(() => {
     text.classList.add("transition");
-  }, 500);
 
-  const addClassInterval = () => {
-    title.forEach((t) => {
-      intervalId = setInterval(() => {
-        if (counter >= 4) {
-          clearInterval(intervalId);
-          return;
-        }
-        t.classList.add("color-change");
-        counter++;
-      }, timer);
-      timer += 1000;
-    });
-  };
-
-  addClassInterval();
+    addClassInterval();
+  }, 700);
 });

@@ -3,6 +3,7 @@ const particles = document.getElementById("particles-js");
 
 const btnStart = document.querySelector(".btn-start-animation");
 const btnBorder = document.querySelector(".rotate-container");
+const video = document.getElementById("video");
 
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
@@ -11,7 +12,7 @@ const btnArrow = document.querySelector(".btn-arrow");
 const cards = document.querySelectorAll(".card");
 const bntShopping = document.querySelector(".bnt-shopping");
 const btnSecurity = document.querySelector(".bnt-security");
-const btnMonitoring = document.querySelector(".bnt-monitoring");
+const btnMonitoring = document.querySelector(".btn-monitoring");
 
 const infoShopping = document.querySelector(".info-shopping");
 const infoSecurity = document.querySelector(".info-security");
@@ -39,7 +40,12 @@ const addClassInterval = () => {
 btnStart.addEventListener("click", () => {
   // Initialize the particles
   particlesJS.load("particles-js", "particlesjs-config.json");
-  particles.style.opacity = 1;
+
+  setTimeout(() => {
+    particles.style.opacity = 1;
+  }, 600);
+
+  video.play();
 
   btnStart.classList.add("scale-down");
   btnBorder.classList.add("scale-down");
@@ -92,26 +98,22 @@ const hideBtn = () => {
   });
 };
 
-bntShopping.addEventListener("click", () => {
-  hideBtn();
+if (bntShopping !== null) {
+  bntShopping.addEventListener("click", () => {
+    hideBtn();
 
-  infoShopping.style.transform = "translateX(0)";
-  infoShopping.style.opacity = "1";
-  infoShopping.style.visibility = "visible";
-});
+    infoShopping.classList.add("active");
+  });
+}
 
-btnMonitoring.addEventListener("click", () => {
-  hideBtn();
+if (btnMonitoring !== null) {
+  btnMonitoring.addEventListener("click", () => {
+    hideBtn();
+  });
+}
 
-  infoShopping.style.transform = "translateX(0)";
-  infoShopping.style.opacity = "1";
-  infoShopping.style.visibility = "visible";
-});
-
-btnSecurity.addEventListener("click", () => {
-  hideBtn();
-
-  infoShopping.style.transform = "translateX(0)";
-  infoShopping.style.opacity = "1";
-  infoShopping.style.visibility = "visible";
-});
+if (btnSecurity !== null) {
+  btnSecurity.addEventListener("click", () => {
+    hideBtn();
+  });
+}

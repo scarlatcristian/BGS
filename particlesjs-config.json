@@ -55,7 +55,7 @@
     "move": {
       "enable": true,
       "speed": 1,
-      "direction": "none",
+      "direction": "left",
       "random": true,
       "straight": false,
       "out_mode": "out",
@@ -95,7 +95,7 @@
         "speed": 3
       },
       "repulse": {
-        "distance": 100,
+        "distance": 50,
         "duration": 0.4
       },
       "push": {

@@ -11,12 +11,12 @@ const title = document.querySelectorAll(".title");
 const btnArrowUp = document.querySelector(".btn-arrow-up");
 
 const cards = document.querySelectorAll(".card");
-const bntShopping = document.querySelector(".bnt-shopping");
-const btnSecurity = document.querySelector(".bnt-security");
+const bntShopping = document.querySelector(".btn-shopping");
+const btnSecurity = document.querySelector(".btn-security");
 const btnMonitoring = document.querySelector(".btn-monitoring");
 
-const infoShopping = document.querySelector(".info-shopping");
 const infoSecurity = document.querySelector(".info-security");
+const infoShopping = document.querySelector(".info-shopping");
 const infoMonitoring = document.querySelector(".info-monitoring");
 
 let counter = 0;
@@ -39,8 +39,6 @@ const addClassInterval = () => {
 
 // After first btn click
 btnStart.addEventListener("click", () => {
-  // Initialize the particles
-
   setTimeout(() => {
     particles.style.opacity = 1;
   }, 600);
@@ -50,7 +48,7 @@ btnStart.addEventListener("click", () => {
 
   setTimeout(() => {
     document.querySelector(".bg-video-loop").style.visibility = "visible";
-    document.querySelector(".bg-video-loop").style.opacity = "1";
+    document.querySelector(".bg-video-loop").style.opacity = "0.6";
     videoLoop.play();
   }, 1300);
 
@@ -105,6 +103,14 @@ const hideBtn = () => {
   });
 };
 
+if (btnSecurity !== null) {
+  btnSecurity.addEventListener("click", () => {
+    hideBtn();
+
+    infoSecurity.classList.add("active");
+  });
+}
+
 if (bntShopping !== null) {
   bntShopping.addEventListener("click", () => {
     hideBtn();
@@ -116,21 +122,21 @@ if (bntShopping !== null) {
 if (btnMonitoring !== null) {
   btnMonitoring.addEventListener("click", () => {
     hideBtn();
+
+    infoMonitoring.classList.add("active");
   });
 }
 
-if (btnSecurity !== null) {
-  btnSecurity.addEventListener("click", () => {
-    hideBtn();
-  });
-}
+document.querySelectorAll(".btn-arrow-right").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    cards.forEach((card) => {
+      card.style.transform = "TranslateX(0)";
+      card.style.opacity = "1";
+      card.style.visibility = "visible";
+    });
 
-document.querySelector(".btn-arrow-right").addEventListener("click", () => {
-  cards.forEach((card) => {
-    card.style.transform = "TranslateX(0)";
-    card.style.opacity = "1";
-    card.style.visibility = "visible";
-  });
-
-  infoShopping.classList.remove("active");
-});
+    infoSecurity.classList.remove("active");
+    infoShopping.classList.remove("active");
+    infoMonitoring.classList.remove("active");
+  })
+);

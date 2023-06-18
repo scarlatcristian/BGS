@@ -51,6 +51,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  filter: hue-rotate(180deg);
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -81,7 +82,7 @@ body {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: rgba(120, 73, 39, 0.5);
+  background-color: rgba(30, 48, 89, 0.5);
   animation: particleFade 1s ease-out, particleMove 2s linear infinite;
 }
 

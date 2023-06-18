@@ -32,6 +32,7 @@ const addClassInterval = () => {
         clearInterval(intervalId);
         return;
       }
+      t.style.transition = "all 0.5s ease";
       t.classList.add("color-change");
       counter++;
     }, timer);
@@ -57,13 +58,19 @@ btnStart.addEventListener("click", () => {
     videoLoop.setAttribute("playsinline", "playsinline");
     videoLoop.setAttribute("muted", "muted");
 
+    video.style.visibility = "visible";
+    video.play();
+
     setTimeout(() => {
       document.querySelector(".bg-video-loop").style.visibility = "visible";
       videoLoop.style.visibility = "visible";
       videoLoop.play();
       document.querySelector(".bg-video-loop").style.opacity = "0.6";
-    }, 2000);
+    }, 1890);
   } else {
+    video.style.visibility = "visible";
+    video.play();
+
     setTimeout(() => {
       document.querySelector(".bg-video-loop").style.visibility = "visible";
       videoLoop.play();
@@ -73,6 +80,7 @@ btnStart.addEventListener("click", () => {
 
   btnStart.classList.add("scale-down");
   btnBorder.classList.add("scale-down");
+
   setTimeout(() => {
     btnBorder.style.border = "none";
     btnStart.remove();
@@ -80,6 +88,8 @@ btnStart.addEventListener("click", () => {
   }, 700);
 
   setTimeout(() => {
+    text.style.transition = "all 1s ease";
+    text.style.visibility = "visible";
     text.classList.add("transition");
 
     addClassInterval();
@@ -99,6 +109,8 @@ btnArrowUp.addEventListener("click", () => {
     } else {
       const card = cards[counterCard];
 
+      card.style.transition = "all 1s ease";
+      card.style.transitionDelay = "0.3s";
       card.style.visibility = "visible";
       card.style.transform = "translateX(0)";
       card.style.opacity = "1";
@@ -126,6 +138,7 @@ if (btnSecurity !== null) {
   btnSecurity.addEventListener("click", () => {
     hideBtn();
 
+    infoSecurity.style.transition = "all 2s ease";
     infoSecurity.classList.add("active");
   });
 }
@@ -133,7 +146,7 @@ if (btnSecurity !== null) {
 if (bntShopping !== null) {
   bntShopping.addEventListener("click", () => {
     hideBtn();
-
+    infoShopping.style.transition = "all 2s ease";
     infoShopping.classList.add("active");
   });
 }
@@ -141,7 +154,7 @@ if (bntShopping !== null) {
 if (btnMonitoring !== null) {
   btnMonitoring.addEventListener("click", () => {
     hideBtn();
-
+    infoMonitoring.style.transition = "all 2s ease";
     infoMonitoring.classList.add("active");
   });
 }

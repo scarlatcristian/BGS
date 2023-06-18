@@ -127,7 +127,7 @@ body {
   border: 1px solid;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
   font-size: 3rem;
 
   height: 20rem;
@@ -149,7 +149,7 @@ body {
   animation: rotateBorder 50s linear infinite;
   width: 22rem;
   height: 22rem;
-  transition: all 0.5s ease;
+  transition: rotate 0.5s ease;
   z-index: 1;
 }
 
@@ -164,11 +164,13 @@ body {
 
 .btn-start-animation.scale-down {
   transform: scale(0);
+  opacity: 0;
 }
 
 .rotate-container.scale-down {
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 @media (max-width: 400px) {
@@ -196,7 +198,6 @@ body {
   position: absolute;
   opacity: 0;
   text-align: center;
-  transition: all 1s ease-in;
   transform: translateY(5rem);
 
   height: 100rem;
@@ -222,13 +223,12 @@ body {
 
 .title {
   display: inline-block;
-  transition: all 0.5s ease;
   opacity: 0;
 }
 
 .title.color-change {
   opacity: 1;
-  color: red;
+  color: #0000ff;
   transform: translateY(-1rem);
 }
 
@@ -304,18 +304,16 @@ body {
   position: absolute;
   height: 10rem;
   width: 10rem;
-  z-index: 1;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  transition: all 1s ease;
-  transition-delay: 0.3s;
   opacity: 0;
   visibility: hidden;
   transform: translateY(6rem);
+  z-index: 1;
 }
 
 .card h3 {
@@ -370,7 +368,6 @@ body {
   transform: translateX(100rem);
   opacity: 0;
   visibility: hidden;
-  transition: all 2s ease;
 
   width: 50%;
   z-index: 5;
@@ -389,7 +386,7 @@ body {
 .info-monitoring h1 {
   margin-bottom: 1rem;
   font-size: 3rem;
-  color: red;
+  color: #0000ff;
 }
 
 .info-shopping p,
@@ -404,7 +401,6 @@ body {
   .info-security h1,
   .info-monitoring h1 {
     font-size: 2.5rem;
-    color: red;
   }
 
   .info-shopping p,

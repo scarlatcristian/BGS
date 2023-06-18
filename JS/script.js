@@ -23,6 +23,8 @@ let counter = 0;
 let timer = 700;
 let intervalId;
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 const addClassInterval = () => {
   title.forEach((t) => {
     intervalId = setInterval(() => {
@@ -46,11 +48,28 @@ btnStart.addEventListener("click", () => {
   video.style.visibility = "visible";
   video.play();
 
-  setTimeout(() => {
-    document.querySelector(".bg-video-loop").style.visibility = "visible";
-    document.querySelector(".bg-video-loop").style.opacity = "0.6";
-    videoLoop.play();
-  }, 1300);
+  if (isMobile) {
+    video.setAttribute("autoplay", "autoplay");
+    video.setAttribute("playsinline", "playsinline");
+    video.setAttribute("muted", "muted");
+
+    videoLoop.setAttribute("autoplay", "autoplay");
+    videoLoop.setAttribute("playsinline", "playsinline");
+    videoLoop.setAttribute("muted", "muted");
+
+    setTimeout(() => {
+      document.querySelector(".bg-video-loop").style.visibility = "visible";
+      videoLoop.style.visibility = "visible";
+      videoLoop.play();
+      document.querySelector(".bg-video-loop").style.opacity = "0.6";
+    }, 2000);
+  } else {
+    setTimeout(() => {
+      document.querySelector(".bg-video-loop").style.visibility = "visible";
+      videoLoop.play();
+      document.querySelector(".bg-video-loop").style.opacity = "0.6";
+    }, 1300);
+  }
 
   btnStart.classList.add("scale-down");
   btnBorder.classList.add("scale-down");

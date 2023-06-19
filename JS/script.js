@@ -8,7 +8,7 @@ const videoLoop = document.getElementById("video-loop");
 
 const text = document.querySelector(".text-about");
 const title = document.querySelectorAll(".title");
-const btnArrowUp = document.querySelector(".btn-arrow-up");
+const btnFadeText = document.querySelector(".btn__text-about");
 
 const cards = document.querySelectorAll(".card");
 const bntShopping = document.querySelector(".btn-shopping");
@@ -19,24 +19,25 @@ const infoSecurity = document.querySelector(".info-security");
 const infoShopping = document.querySelector(".info-shopping");
 const infoMonitoring = document.querySelector(".info-monitoring");
 
-let counter = 0;
-let timer = 700;
+let timer = 350;
 let intervalId;
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+// Animate the span elements in title
 const addClassInterval = () => {
-  title.forEach((t) => {
+  title.forEach((titleSpan) => {
+    let counter = 0;
     intervalId = setInterval(() => {
-      if (counter >= 5) {
+      if (counter >= title.length) {
         clearInterval(intervalId);
         return;
       }
-      t.style.transition = "all 0.5s ease";
-      t.classList.add("color-change");
+      titleSpan.style.transition = "all 0.5s ease";
+      titleSpan.classList.add("color-change");
       counter++;
     }, timer);
-    timer += 700;
+    timer += 350;
   });
 };
 
@@ -88,18 +89,15 @@ btnStart.addEventListener("click", () => {
   }, 700);
 
   setTimeout(() => {
-    text.style.transition = "all 1s ease";
-    text.style.visibility = "visible";
-    text.classList.add("transition");
+    text.classList.remove("text-invisible");
 
     addClassInterval();
   }, 700);
 });
 
-// After arrow btn click
-btnArrowUp.addEventListener("click", () => {
-  text.style.transform = "translateY(-25rem)";
-  text.style.opacity = "0";
+// After text arrow-right btn click
+btnFadeText.addEventListener("click", () => {
+  text.classList.add("text-fade-out");
 
   let counterCard = 0;
 
@@ -109,11 +107,7 @@ btnArrowUp.addEventListener("click", () => {
     } else {
       const card = cards[counterCard];
 
-      card.style.transition = "all 1s ease";
-      card.style.transitionDelay = "0.3s";
-      card.style.visibility = "visible";
-      card.style.transform = "translateX(0)";
-      card.style.opacity = "1";
+      card.classList.remove("card-invisible");
 
       counterCard++;
     }
@@ -124,13 +118,10 @@ btnArrowUp.addEventListener("click", () => {
   }, 2000);
 });
 
-// After Technical and online shop button
-
+// After Security Technical or Monitoring button
 const hideBtn = () => {
   cards.forEach((card) => {
-    card.style.transform = "TranslateX(-20rem)";
-    card.style.opacity = "0";
-    card.style.visibility = "hidden";
+    card.classList.add("fade-out");
   });
 };
 
@@ -162,9 +153,7 @@ if (btnMonitoring !== null) {
 document.querySelectorAll(".btn-arrow-right").forEach((btn) =>
   btn.addEventListener("click", () => {
     cards.forEach((card) => {
-      card.style.transform = "TranslateX(0)";
-      card.style.opacity = "1";
-      card.style.visibility = "visible";
+      card.classList.remove("fade-out");
     });
 
     infoSecurity.classList.remove("active");

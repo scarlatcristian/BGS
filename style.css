@@ -63,7 +63,6 @@ body {
   bottom: 0;
   right: 0;
   opacity: 0;
-  transition: opacity 0.5s ease-in;
 }
 
 .cursor {
@@ -79,8 +78,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: rgba(30, 48, 89, 0.5);
   animation: particleFade 1s ease-out, particleMove 2s linear infinite;
@@ -191,46 +190,74 @@ body {
 .text-about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   color: #fff;
   font-size: 2rem;
+  transition: all 1s ease;
+
   position: absolute;
-  opacity: 0;
-  text-align: center;
-  transform: translateY(5rem);
+  top: 5rem;
+  left: 5rem;
+  opacity: 1;
 
-  height: 100rem;
-  width: fit-content;
-
+  height: fit-content;
+  width: 50rem;
   z-index: 1;
 }
 
-.text-about h1 {
-  font-size: 5rem;
-}
-
-.text-about h3 {
-  margin-top: 1rem;
+.text-about p {
+  font-size: 2.3rem;
   margin-bottom: 1rem;
 }
 
-.transition {
-  position: 0;
-  opacity: 1;
-  transform: translateX(0);
+.text-invisible {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-50rem);
+}
+
+.text-fade-out {
+  transform: translateX(-25rem);
+  opacity: 0;
 }
 
 .title {
   display: inline-block;
+  font-size: 7rem;
+  letter-spacing: 0.5rem;
   opacity: 0;
+  margin-bottom: 1rem;
 }
 
 .title.color-change {
   opacity: 1;
   color: #0000ff;
   transform: translateY(-1rem);
+}
+
+.text-about__btnText {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.text-about__btnText h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 3rem;
+}
+
+.btn__about-about:hover i {
+  animation: moveArrowRight 1s;
+}
+
+@media (max-width: 400px) {
+  .btn__about-about:hover i {
+    animation: none;
+  }
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
@@ -311,10 +338,25 @@ body {
   justify-content: center;
   align-items: center;
 
+  transition: all 1s ease;
+  transition-delay: 0.2s;
+  visibility: visible;
+  transform: translateX(0);
+  opacity: 1;
+
+  z-index: 1;
+}
+
+.card.card-invisible {
   opacity: 0;
   visibility: hidden;
   transform: translateY(6rem);
-  z-index: 1;
+}
+
+.card.fade-out {
+  transform: TranslateX(-20rem);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .card h3 {
@@ -418,5 +460,13 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+  }
+
+  .btn-arrow-up:hover i {
+    animation: none;
+  }
+
+  .btn-arrow-right:hover i {
+    animation: none;
   }
 }

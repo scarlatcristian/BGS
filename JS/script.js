@@ -1,5 +1,5 @@
 "use strict";
-const particles = document.getElementById("particles-js");
+const particles = document.getElementById("cursor-overlay");
 
 const btnStart = document.querySelector(".btn-start-animation");
 const btnBorder = document.querySelector(".rotate-container");

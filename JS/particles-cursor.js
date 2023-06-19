@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const particleContainer = document.getElementById("particles-js");
+  const particleContainer = document.getElementById("cursor-overlay");
 
   // Create a new particle element with random velocities and append it to the container
   function createParticle(x, y) {

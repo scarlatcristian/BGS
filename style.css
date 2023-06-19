@@ -264,13 +264,13 @@ body {
   }
 
   .title {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .text-about p {
-    font-size: 1rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    width: 50%;
+    width: 80%;
   }
 }
 

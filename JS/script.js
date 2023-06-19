@@ -89,6 +89,7 @@ btnStart.addEventListener("click", () => {
   }, 700);
 
   setTimeout(() => {
+    text.style.transition = "all 1s ease";
     text.classList.remove("text-invisible");
 
     addClassInterval();
@@ -107,6 +108,7 @@ btnFadeText.addEventListener("click", () => {
     } else {
       const card = cards[counterCard];
 
+      card.style.transition = "all 1s ease";
       card.classList.remove("card-invisible");
 
       counterCard++;

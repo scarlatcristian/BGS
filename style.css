@@ -190,12 +190,11 @@ body {
 .text-about {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 
   color: #fff;
   font-size: 2rem;
-  transition: all 1s ease;
 
   position: absolute;
   top: 5rem;
@@ -257,6 +256,21 @@ body {
 @media (max-width: 400px) {
   .btn__about-about:hover i {
     animation: none;
+  }
+
+  .text-about {
+    align-items: flex-start;
+    width: fit-content;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .text-about p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 50%;
   }
 }
 
@@ -338,7 +352,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all 1s ease;
   transition-delay: 0.2s;
   visibility: visible;
   transform: translateX(0);

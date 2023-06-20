@@ -108,7 +108,7 @@ btnFadeText.addEventListener("click", () => {
     } else {
       const card = cards[counterCard];
 
-      card.style.transition = "all 1s ease";
+      card.style.visibility = "visible";
       card.classList.remove("card-invisible");
 
       counterCard++;

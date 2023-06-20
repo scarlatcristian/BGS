@@ -110,7 +110,6 @@ btnFadeText.addEventListener("click", () => {
 
       card.style.transitionDelay = "0.2s";
       card.style.transition = "all 1s ease";
-      card.style.opacity = "1";
       card.classList.remove("card-invisible");
 
       counterCard++;

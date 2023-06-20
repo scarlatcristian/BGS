@@ -201,7 +201,7 @@ body {
   left: 5rem;
   opacity: 1;
 
-  height: fit-content;
+  height: 100%;
   width: 50rem;
   z-index: 1;
 }
@@ -253,14 +253,16 @@ body {
   animation: moveArrowRight 1s;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .btn__about-about:hover i {
     animation: none;
   }
 
   .text-about {
     align-items: flex-start;
-    width: fit-content;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 80%;
   }
 
   .title {
@@ -269,8 +271,6 @@ body {
 
   .text-about p {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    width: 80%;
   }
 }
 

@@ -364,16 +364,13 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition-delay: 0.2s;
   transform: translateX(0);
-  opacity: 1;
+  opacity: 0;
 
-  visibility: hidden;
   z-index: 1;
 }
 
 .card.card-invisible {
-  opacity: 0;
   visibility: hidden;
   transform: translateY(6rem);
 }

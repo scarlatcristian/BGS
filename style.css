@@ -228,6 +228,7 @@ body {
   letter-spacing: 0.5rem;
   opacity: 0;
   margin-bottom: 1rem;
+  margin-top: -2rem;
 }
 
 .title.color-change {
@@ -245,7 +246,7 @@ body {
 
 .text-about__btnText h3 {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 8rem;
   margin-right: 3rem;
 }
 

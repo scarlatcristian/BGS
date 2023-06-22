@@ -19,8 +19,8 @@ body {
   font-family: "Neusa Medium", sans-serif;
 
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+  height: 100svh;
+  width: 100svw;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -73,8 +73,8 @@ body {
 }
 
 .bg-video__content {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   filter: hue-rotate(180deg);
 }
@@ -249,7 +249,7 @@ body {
   left: 10%;
   opacity: 1;
 
-  height: 90vh;
+  height: 90svh;
   width: 40vw;
   z-index: 1;
 }
@@ -266,8 +266,6 @@ body {
   margin-top: 1rem;
   margin-bottom: 8rem;
   margin-right: 3rem;
-
-  letter-spacing: 0.8rem;
 }
 
 .text-invisible {
@@ -584,6 +582,7 @@ body {
 .info-security__container {
   display: flex;
   margin-bottom: 10rem;
+  margin-top: 2rem;
 
   height: 50%;
   width: 100%;
@@ -602,17 +601,33 @@ body {
 
 .info-security__container--column i {
   background-color: #fff;
-  color: #000;
   border-radius: 50%;
-  height: 2.2rem;
-  width: 2.2rem;
+  color: #000;
   text-align: center;
+  margin-right: 2rem;
+
+  height: 2rem;
+  width: 2rem;
+}
+
+.info-security__container--column h1 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.info-security__container--column p {
+  font-size: 1.6rem;
 }
 
 @media only screen and (max-width: 500px) {
   .info-security__container {
     justify-content: center;
     align-items: flex-start;
+  }
+
+  .info-security__container--column h1 {
+    font-size: 3.7rem;
+    color: #fff;
   }
 
   .info-security__container--column p {

@@ -1,4 +1,3 @@
-@import url("//db.onlinewebfonts.com/c/20e2d60222c36b7a191e019607045109?family=Neusa+Medium");
 @font-face {
   font-family: "Neusa Medium";
   src: url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.eot");
@@ -248,12 +247,6 @@ body {
     height: 18rem;
     width: 18rem;
   }
-
-  .logo-BGS {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////// */
@@ -277,10 +270,10 @@ body {
   z-index: 1;
 }
 
-/* .text-about img {
-  height: 2rem;
-  margin-top: 5rem;
-} */
+.text-about h1 {
+  text-align: start;
+  font-size: 6rem;
+}
 
 .text-about p {
   font-size: 1.6rem;
@@ -307,11 +300,7 @@ body {
 }
 
 .title {
-  display: inline-block;
-  font-size: 7rem;
   opacity: 0;
-  margin-bottom: 1rem;
-  margin-right: -1rem;
 }
 
 .title.color-change {
@@ -323,7 +312,7 @@ body {
 .text-about__btnText {
   display: flex;
   justify-content: flex-start;
-  margin-top: 3rem;
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -331,29 +320,39 @@ body {
   animation: moveArrowRight 1s;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
+  .text-about {
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    width: 80%;
+  }
+
   .btn__text-about:hover i {
     animation: none;
   }
 
-  .title {
+  .text-about h1 {
     font-size: 5rem;
+    margin-bottom: 1rem;
   }
 
   .text-about p {
-    line-height: normal;
-  }
-
-  .text-about {
-    align-items: flex-start;
-    justify-content: space-evenly;
     font-size: 1.5rem;
-    text-align: center;
-    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .text-about {
+    gap: 1.2rem;
   }
 
-  .text-about__btnText {
-    justify-content: center;
+  .text-about h1 {
+    font-size: 3rem;
+  }
+
+  .text-about p {
+    font-size: 1.3rem;
   }
 }
 
@@ -654,6 +653,8 @@ body {
 
   border-radius: 50%;
   background-color: var(--color-white);
+
+  padding: 0.5rem;
   margin-right: 2rem;
   height: 2rem;
   width: 2rem;

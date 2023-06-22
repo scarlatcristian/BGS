@@ -42,7 +42,9 @@ const addClassInterval = () => {
   });
 };
 
-titleBGS.classList.add("fade-in");
+setTimeout(() => {
+  titleBGS.classList.add("fade-in");
+}, 500);
 
 // After first btn click
 btnStart.addEventListener("click", () => {

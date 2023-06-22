@@ -20,6 +20,7 @@ body {
 
   overflow: hidden;
   height: 100vh;
+  width: 100vw;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -305,10 +306,14 @@ body {
     animation: none;
   }
 
+  .title {
+    font-size: 5rem;
+  }
+
   .text-about {
     align-items: flex-start;
     justify-content: space-evenly;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     width: 80%;
   }
@@ -401,6 +406,19 @@ body {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .btn-arrow-up:hover i {
+    animation: none;
+  }
+
+  .btn-arrow-right:hover i {
+    animation: none;
+  }
+  .btn-arrow-left:hover i {
+    animation: none;
   }
 }
 

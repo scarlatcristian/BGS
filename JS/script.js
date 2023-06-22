@@ -2,6 +2,7 @@
 const particles = document.getElementById("cursor-overlay");
 
 const btnStart = document.querySelector(".btn-start-animation");
+const titleBGS = document.querySelector(".title-BGS");
 const btnBorder = document.querySelector(".rotate-container");
 const video = document.getElementById("video");
 const videoLoop = document.getElementById("video-loop");
@@ -40,6 +41,8 @@ const addClassInterval = () => {
     timer += 350;
   });
 };
+
+titleBGS.classList.add("fade-in");
 
 // After first btn click
 btnStart.addEventListener("click", () => {
@@ -81,6 +84,7 @@ btnStart.addEventListener("click", () => {
 
   btnStart.classList.add("scale-down");
   btnBorder.classList.add("scale-down");
+  titleBGS.style.opacity = "0";
 
   setTimeout(() => {
     btnBorder.style.border = "none";
@@ -153,7 +157,7 @@ if (btnMonitoring !== null) {
   });
 }
 
-document.querySelectorAll(".btn-arrow-right").forEach((btn) =>
+document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
   btn.addEventListener("click", () => {
     cards.forEach((card) => {
       card.classList.remove("fade-out");

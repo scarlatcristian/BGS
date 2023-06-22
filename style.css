@@ -1,4 +1,25 @@
 @import url("//db.onlinewebfonts.com/c/20e2d60222c36b7a191e019607045109?family=Neusa+Medium");
+@font-face {
+  font-family: "Neusa Medium";
+  src: url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.eot");
+  src: url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.svg#Neusa Medium")
+      format("svg");
+}
+
+:root {
+  /* --color-header: #0000ff; */
+  --color-header: #1c63dd;
+  --color-white: #fff;
+  --color-black: #000;
+}
 
 * {
   padding: 0;
@@ -15,7 +36,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: #000;
+  background-color: var(--color-black);
   font-family: "Neusa Medium", sans-serif;
 
   overflow: hidden;
@@ -144,12 +165,10 @@ body {
 
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* First btn animation */
-.title-BGS {
+.logo-BGS {
   position: absolute;
   top: 0;
   left: 50%;
-  color: #1c63dd;
-  font-size: 6em;
 
   margin-top: 0;
   transform: translate(-50%, 0);
@@ -158,13 +177,17 @@ body {
   z-index: 1000;
 }
 
-.title-BGS.fade-in {
+.logo-BGS img {
+  height: 5rem;
+}
+
+.logo-BGS.fade-in {
   opacity: 1;
   margin-top: 5rem;
 }
 
 .btn-start-animation {
-  color: #fff;
+  color: var(--color-white);
   background: transparent;
   border: 1px solid;
   border-radius: 50%;
@@ -226,7 +249,7 @@ body {
     width: 18rem;
   }
 
-  .title-BGS {
+  .logo-BGS {
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -242,21 +265,25 @@ body {
   align-items: flex-start;
 
   color: #cbcbcb;
-  font-size: 2.3rem;
+  font-size: 3rem;
 
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 10%;
   opacity: 1;
 
-  height: 90vh;
-  width: 40vw;
+  height: 100vh;
+  width: 50vw;
   z-index: 1;
 }
 
+/* .text-about img {
+  height: 2rem;
+  margin-top: 5rem;
+} */
+
 .text-about p {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 2.7rem;
   font-weight: lighter;
 }
@@ -338,7 +365,7 @@ body {
 
   border: #002865 solid;
   border-radius: 50%;
-  color: #fff;
+  color: var(--color-white);
   background-color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   transition: transform 0.5s ease;
@@ -460,7 +487,7 @@ body {
 }
 
 .card h3 {
-  color: #fff;
+  color: var(--color-white);
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
@@ -504,7 +531,7 @@ body {
 .info-shopping,
 .info-security,
 .info-monitoring {
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -513,7 +540,7 @@ body {
   padding: 1rem;
 
   position: absolute;
-  transform: translateX(100rem);
+  transform: translateX(30rem);
   opacity: 0;
   visibility: hidden;
   height: 100vh;
@@ -534,7 +561,7 @@ body {
 .info-monitoring h1 {
   margin-bottom: 1rem;
   font-size: 3rem;
-  color: #1c63dd;
+  color: var(--color-header);
 }
 
 .info-shopping p,
@@ -577,6 +604,21 @@ body {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .info-shopping > p,
+  .info-security > p,
+  .info-monitoring > p {
+    font-size: 1.1rem;
+    font-weight: lighter;
+  }
+
+  .info-shopping h1,
+  .info-security h1,
+  .info-monitoring h1 {
+    font-size: 1.5rem;
+  }
+}
+
 /* ///////////////////////////////////////////////////////////////////////////////////////////// */
 
 .info-security__container {
@@ -601,39 +643,50 @@ body {
 }
 
 .info-security__container--column i {
-  background-color: #fff;
-  border-radius: 50%;
-  color: #000;
-  text-align: center;
-  margin-right: 2rem;
+  color: var(--color-black);
+}
 
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border-radius: 50%;
+  background-color: var(--color-white);
+  margin-right: 2rem;
   height: 2rem;
   width: 2rem;
 }
 
+.text-checkbox {
+  display: flex;
+}
+
 .info-security__container--column h1 {
   font-size: 3rem;
-  color: #fff;
+  color: var(--color-header);
 }
 
 .info-security__container--column p {
   font-size: 1.6rem;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
   .info-security__container {
     justify-content: center;
     align-items: flex-start;
+    height: 40%;
   }
 
   .info-security__container--column h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    margin-top: 3rem;
+    color: var(--color-header);
+    font-size: 1.5rem;
+    margin-top: 1rem;
   }
 
   .info-security__container--column p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .info-security__container--column {
@@ -641,7 +694,18 @@ body {
   }
 
   .info-security__container--column i {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+
+  .checkbox {
     height: 1.5rem;
     width: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .info-security__container--column p {
+    font-size: 1.1rem;
   }
 }

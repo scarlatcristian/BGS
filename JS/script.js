@@ -2,7 +2,7 @@
 const particles = document.getElementById("cursor-overlay");
 
 const btnStart = document.querySelector(".btn-start-animation");
-const titleBGS = document.querySelector(".title-BGS");
+const titleBGS = document.querySelector(".logo-BGS");
 const btnBorder = document.querySelector(".rotate-container");
 const video = document.getElementById("video");
 const videoLoop = document.getElementById("video-loop");
@@ -91,6 +91,7 @@ btnStart.addEventListener("click", () => {
   setTimeout(() => {
     btnBorder.style.border = "none";
     btnStart.remove();
+    titleBGS.remove();
     btnBorder.remove();
   }, 700);
 
@@ -138,7 +139,7 @@ if (btnSecurity !== null) {
   btnSecurity.addEventListener("click", () => {
     hideBtn();
 
-    infoSecurity.style.transition = "all 2s ease";
+    infoSecurity.style.transition = "all 1s ease";
     infoSecurity.classList.add("active");
   });
 }
@@ -146,7 +147,8 @@ if (btnSecurity !== null) {
 if (bntShopping !== null) {
   bntShopping.addEventListener("click", () => {
     hideBtn();
-    infoShopping.style.transition = "all 2s ease";
+
+    infoShopping.style.transition = "all 1s ease";
     infoShopping.classList.add("active");
   });
 }
@@ -154,7 +156,8 @@ if (bntShopping !== null) {
 if (btnMonitoring !== null) {
   btnMonitoring.addEventListener("click", () => {
     hideBtn();
-    infoMonitoring.style.transition = "all 2s ease";
+
+    infoMonitoring.style.transition = "all 1s ease";
     infoMonitoring.classList.add("active");
   });
 }

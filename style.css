@@ -540,7 +540,7 @@ body {
 .info-shopping p,
 .info-security p,
 .info-monitoring p {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
@@ -581,6 +581,7 @@ body {
 
 .info-security__container {
   display: flex;
+
   margin-bottom: 10rem;
   margin-top: 2rem;
 
@@ -611,7 +612,7 @@ body {
 }
 
 .info-security__container--column h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #fff;
 }
 
@@ -626,8 +627,9 @@ body {
   }
 
   .info-security__container--column h1 {
-    font-size: 3.7rem;
+    font-size: 3rem;
     color: #fff;
+    margin-top: 5rem;
   }
 
   .info-security__container--column p {

@@ -1,3 +1,5 @@
+"use strict";
+
 const particles = document.getElementById("cursor-overlay");
 
 const btnStart = document.querySelector(".btn-start-animation");
@@ -101,9 +103,22 @@ btnStart.addEventListener("click", () => {
 });
 
 // After text arrow-right btn click
+const hideBtn = () => {
+  cards.forEach((card) => {
+    card.classList.add("fade-out");
+  });
+};
+
+const ShowBtn = () => {
+  cards.forEach((card) => {
+    card.classList.remove("fade-out");
+  });
+};
+
 btnFadeText.addEventListener("click", () => {
   text.classList.add("text-fade-out");
 
+  logoBGS.classList.add("transitionLeft");
   ShowBtn();
 
   let counterCard = 0;
@@ -124,17 +139,6 @@ btnFadeText.addEventListener("click", () => {
 });
 
 // After Security Technical or Monitoring button
-const hideBtn = () => {
-  cards.forEach((card) => {
-    card.classList.add("fade-out");
-  });
-};
-
-const ShowBtn = () => {
-  cards.forEach((card) => {
-    card.classList.remove("fade-out");
-  });
-};
 
 btnSecurity.addEventListener("click", () => {
   hideBtn();
@@ -172,6 +176,8 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
 logoBGS.addEventListener("click", () => {
   if (text.classList.contains("text-fade-out")) {
     text.classList.remove("text-fade-out");
+
+    logoBGS.classList.remove("transitionLeft");
     hideBtn();
 
     if (infoSecurity.classList.contains("active")) {

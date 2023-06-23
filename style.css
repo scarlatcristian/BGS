@@ -1,3 +1,4 @@
+@import url("//db.onlinewebfonts.com/c/20e2d60222c36b7a191e019607045109?family=Neusa+Medium");
 @font-face {
   font-family: "Neusa Medium";
   src: url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.eot");
@@ -182,6 +183,10 @@ body {
   height: 3rem;
 }
 
+.logo-BGS.transitionLeft {
+  left: 14%;
+}
+
 .logo-BGS.fade-in {
   opacity: 1;
   margin-top: 2rem;
@@ -250,7 +255,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+/* @media only screen and (max-width: 37.5em) {
   .rotate-container {
     height: 20rem;
     width: 20rem;
@@ -268,7 +273,7 @@ body {
   .logo-BGS.fade-in {
     margin-top: 2.5rem;
   }
-}
+} */
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Fade in text after pressing first btn */

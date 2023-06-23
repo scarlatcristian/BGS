@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const particleContainer = document.getElementById("cursor-overlay");
 
+  // Helper function to generate a random number within a range
+  function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
   // Create a new particle element with random velocities and append it to the container
   function createParticle(x, y) {
     const particle = document.createElement("div");
@@ -12,12 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     particleContainer.appendChild(particle);
     setTimeout(() => {
       particle.remove();
-    }, 1000);
-  }
-
-  // Helper function to generate a random number within a range
-  function getRandomNumber(min, max) {
-    return Math.random() * (max - min) + min;
+    }, 800);
   }
 
   // Handle mousemove event to create particles at the cursor position

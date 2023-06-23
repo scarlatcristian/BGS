@@ -18,6 +18,8 @@
   --color-header: #1c63dd;
   --color-white: #fff;
   --color-black: #000;
+
+  --margin-small: 1rem;
 }
 
 * {
@@ -169,7 +171,6 @@ body {
   top: 0;
   left: 50%;
 
-  margin-top: 0;
   transform: translate(-50%, 0);
   transition: all 1s ease;
   opacity: 0;
@@ -283,7 +284,7 @@ body {
 
 .text-about__btnText h3 {
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin-top: var(--margin-small);
   margin-bottom: 8rem;
   margin-right: 3rem;
 }
@@ -312,7 +313,7 @@ body {
 .text-about__btnText {
   display: flex;
   justify-content: flex-start;
-  margin-top: 1rem;
+  margin-top: var(--margin-small);
   width: 100%;
 }
 
@@ -334,7 +335,7 @@ body {
 
   .text-about h1 {
     font-size: 5rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-small);
   }
 
   .text-about p {
@@ -365,7 +366,7 @@ body {
   border: #002865 solid;
   border-radius: 50%;
   color: var(--color-white);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.5s ease;
   overflow: hidden;
@@ -558,7 +559,7 @@ body {
 .info-shopping h1,
 .info-security h1,
 .info-monitoring h1 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--margin-small);
   font-size: 3rem;
   color: var(--color-header);
 }
@@ -567,7 +568,7 @@ body {
 .info-security p,
 .info-monitoring p {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--margin-small);
 }
 
 @media only screen and (max-width: 600px) {
@@ -683,7 +684,7 @@ body {
   .info-security__container--column h1 {
     color: var(--color-header);
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin-top: var(--margin-small);
   }
 
   .info-security__container--column p {

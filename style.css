@@ -406,7 +406,7 @@ body {
 /* Btn hover animation */
 .btn-arrow-left {
   position: fixed;
-  bottom: 10%;
+  bottom: 15%;
 }
 
 .btn-arrow-up:hover i {

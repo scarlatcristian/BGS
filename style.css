@@ -1,4 +1,3 @@
-@import url("//db.onlinewebfonts.com/c/20e2d60222c36b7a191e019607045109?family=Neusa+Medium");
 @font-face {
   font-family: "Neusa Medium";
   src: url("//db.onlinewebfonts.com/t/20e2d60222c36b7a191e019607045109.eot");
@@ -42,7 +41,7 @@ body {
   background-color: var(--color-black);
   font-family: "Neusa Medium", sans-serif;
 
-  overflow: hidden;
+  overflow-x: hidden;
   height: 100vh;
 }
 
@@ -675,8 +674,8 @@ body {
   align-items: center;
   text-align: center;
 
-  border-radius: 50%;
   background-color: var(--color-white);
+  border-radius: 50%;
 
   padding: 0.5rem;
   margin-right: 2rem;

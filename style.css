@@ -41,7 +41,7 @@ body {
   background-color: var(--color-black);
   font-family: "Neusa Medium", sans-serif;
 
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100vh;
 }
 

@@ -22,7 +22,6 @@ const infoShopping = document.querySelector(".info-shopping");
 const infoMonitoring = document.querySelector(".info-monitoring");
 
 let timer = 350;
-let intervalId;
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -30,7 +29,7 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const addClassInterval = () => {
   title.forEach((titleSpan) => {
     let counter = 0;
-    intervalId = setInterval(() => {
+    let intervalId = setInterval(() => {
       if (counter >= title.length) {
         clearInterval(intervalId);
         return;
@@ -107,6 +106,9 @@ const hideBtn = () => {
   cards.forEach((card) => {
     card.classList.add("fade-out");
   });
+
+  document.querySelector("body").style.height = "100vh";
+  document.querySelector("body").style.overflow = "hidden";
 };
 
 const ShowBtn = () => {
@@ -118,7 +120,6 @@ const ShowBtn = () => {
 btnFadeText.addEventListener("click", () => {
   text.classList.add("text-fade-out");
 
-  logoBGS.classList.add("transitionLeft");
   ShowBtn();
 
   let counterCard = 0;
@@ -139,9 +140,12 @@ btnFadeText.addEventListener("click", () => {
 });
 
 // After Security Technical or Monitoring button
-
 btnSecurity.addEventListener("click", () => {
   hideBtn();
+
+  document.querySelector("body").style.height = "fit-content";
+  document.querySelector("body").style.overflowX = "hidden";
+  document.querySelector("body").style.overflowY = "visible";
 
   infoSecurity.style.transition = "all 1s ease";
   infoSecurity.classList.add("active");
@@ -166,6 +170,8 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
     cards.forEach((card) => {
       card.classList.remove("fade-out");
     });
+    document.querySelector("body").style.height = "100vh";
+    document.querySelector("body").style.overflow = "hidden";
 
     infoSecurity.classList.remove("active");
     infoShopping.classList.remove("active");
@@ -176,8 +182,9 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
 logoBGS.addEventListener("click", () => {
   if (text.classList.contains("text-fade-out")) {
     text.classList.remove("text-fade-out");
+    document.querySelector("body").style.height = "100vh";
+    document.querySelector("body").style.overflow = "hidden";
 
-    logoBGS.classList.remove("transitionLeft");
     hideBtn();
 
     if (infoSecurity.classList.contains("active")) {
@@ -199,12 +206,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const particleContainer = document.getElementById("cursor-overlay");
 
   // Generate a random number within a range
-  function getRandomNumber(min, max) {
+  const getRandomNumber = (min, max) => {
     return Math.random() * (max - min) + min;
-  }
+  };
 
   // Create a new particle element with random velocities and append it to the container
-  function createParticle(x, y) {
+  const createParticle = (x, y) => {
     const particle = document.createElement("div");
     particle.className = "particle";
     particle.style.setProperty("--x", getRandomNumber(-50, 50) + "px");
@@ -215,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       particle.remove();
     }, 800);
-  }
+  };
 
   // Create particles at the cursor position
   document.addEventListener("mousemove", function (event) {

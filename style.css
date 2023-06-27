@@ -14,7 +14,6 @@
 }
 
 :root {
-  /* --color-header: #0000ff; */
   --color-header: #1c63dd;
   --color-white: #fff;
   --color-black: #000;
@@ -212,8 +211,7 @@ a {
 
 .btn-start-animation:hover {
   transform: scale(0.9);
-  border: 1px solid
-    linear-gradient(to bottom, #002865 0%, #1d55aa 50%, #002865 100%);
+  border: 1px solid;
 }
 
 .rotate-container {
@@ -776,3 +774,17 @@ a {
 .gallery__item--8 {
   grid-area: 3 / 7 / 5 / 9;
 }
+
+/* figure {
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  border-radius: 10px;
+  outline-offset: 1.3rem;
+}
+
+figure:hover {
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  transform: scale(1.05) translateY(-0.5rem);
+  outline: 1rem solid var(--color-header);
+  z-index: 10;
+} */

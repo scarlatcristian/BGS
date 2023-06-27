@@ -193,7 +193,7 @@ btnMonitoring.addEventListener("click", () => {
   infoMonitoring.classList.add("active");
 });
 
-document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
+document.querySelectorAll(".btn-arrow-left").forEach((btn) => {
   btn.addEventListener("click", () => {
     cards.forEach((card) => {
       card.classList.remove("fade-out");
@@ -208,8 +208,8 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
     if (!logoBGS.classList.contains("fade-in")) {
       logoBGS.classList.add("fade-in");
     }
-  })
-);
+  });
+});
 
 // going back to explore page when pressing the logo
 logoBGS.addEventListener("click", () => {

@@ -1,5 +1,6 @@
 "use strict";
 
+const body = document.querySelector("body");
 const particles = document.getElementById("cursor-overlay");
 
 const btnStart = document.querySelector(".btn-start-animation");
@@ -21,11 +22,35 @@ const infoSecurity = document.querySelector(".info-security");
 const infoShopping = document.querySelector(".info-shopping");
 const infoMonitoring = document.querySelector(".info-monitoring");
 
+// Hide logo when scrolling down, show when scrolling up
+const hideLogo = () => {
+  let lastScrollTop = 0;
+  document.addEventListener(
+    "scroll",
+    function () {
+      logoBGS.style.transition = "0.5s";
+      // or window.addEventListener("scroll"....
+      let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > lastScrollTop) {
+        // down-scroll code
+        logoBGS.style.marginTop = "0rem";
+        logoBGS.style.opacity = "0";
+      } else if (st < lastScrollTop) {
+        // up-scroll code
+        logoBGS.style.marginTop = "5rem";
+        logoBGS.style.opacity = "1";
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    },
+    false
+  );
+};
+
 let timer = 350;
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-// Animate the span elements in title
+// Animate the title in about page
 const addClassInterval = () => {
   title.forEach((titleSpan) => {
     let counter = 0;
@@ -103,12 +128,15 @@ btnStart.addEventListener("click", () => {
 
 // After text arrow-right btn click
 const hideBtn = () => {
+  // Calls function that hides logo on scroll
+  hideLogo();
+
+  // shows buttons with monitoring, security and shopping
   cards.forEach((card) => {
     card.classList.add("fade-out");
   });
 
-  document.querySelector("body").style.height = "100vh";
-  document.querySelector("body").style.overflow = "hidden";
+  body.style.overflow = "hidden";
 };
 
 const ShowBtn = () => {
@@ -140,17 +168,19 @@ btnFadeText.addEventListener("click", () => {
 });
 
 // After Security Technical or Monitoring button
+// SECURITY
 btnSecurity.addEventListener("click", () => {
   hideBtn();
 
-  document.querySelector("body").style.height = "fit-content";
-  document.querySelector("body").style.overflowX = "hidden";
-  document.querySelector("body").style.overflowY = "visible";
+  body.style.height = "fit-content";
+  body.style.overflowX = "hidden";
+  body.style.overflowY = "visible";
 
   infoSecurity.style.transition = "all 1s ease";
   infoSecurity.classList.add("active");
 });
 
+// SHOPPING
 bntShopping.addEventListener("click", () => {
   hideBtn();
 
@@ -158,6 +188,7 @@ bntShopping.addEventListener("click", () => {
   infoShopping.classList.add("active");
 });
 
+// MONITORING
 btnMonitoring.addEventListener("click", () => {
   hideBtn();
 
@@ -170,8 +201,8 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
     cards.forEach((card) => {
       card.classList.remove("fade-out");
     });
-    document.querySelector("body").style.height = "100vh";
-    document.querySelector("body").style.overflow = "hidden";
+
+    body.style.overflow = "hidden";
 
     infoSecurity.classList.remove("active");
     infoShopping.classList.remove("active");
@@ -179,11 +210,12 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
   })
 );
 
+// going back to explore page when pressing the logo
 logoBGS.addEventListener("click", () => {
   if (text.classList.contains("text-fade-out")) {
     text.classList.remove("text-fade-out");
-    document.querySelector("body").style.height = "100vh";
-    document.querySelector("body").style.overflow = "hidden";
+
+    body.style.overflow = "hidden";
 
     hideBtn();
 
@@ -225,9 +257,9 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Create particles at the cursor position
-  document.addEventListener("mousemove", function (event) {
-    const x = event.clientX;
-    const y = event.clientY;
+  document.addEventListener("mousemove", function (e) {
+    const x = e.clientX;
+    const y = e.clientY;
     createParticle(x, y);
   });
 });

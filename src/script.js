@@ -189,9 +189,6 @@ bntShopping.addEventListener("click", () => {
 btnMonitoring.addEventListener("click", () => {
   hideBtn();
 
-  body.style.overflowX = "hidden";
-  body.style.overflowY = "visible";
-
   infoMonitoring.style.transition = "all 1s ease";
   infoMonitoring.classList.add("active");
 });

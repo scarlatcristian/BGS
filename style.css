@@ -395,6 +395,7 @@ a {
 /* Btn hover animation */
 .btn-arrow-left {
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .btn-arrow-up:hover img {
@@ -685,6 +686,7 @@ a {
 
 .text-checkbox {
   display: flex;
+  align-items: center;
 }
 
 .info-security__container--column h1 {
@@ -758,13 +760,6 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.gallery__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .gallery__item--1 {

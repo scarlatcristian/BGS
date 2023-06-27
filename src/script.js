@@ -1,8 +1,5 @@
 "use strict";
 
-import _ from "lodash";
-import "./style.css";
-
 const body = document.querySelector("body");
 const particles = document.getElementById("cursor-overlay");
 

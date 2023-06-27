@@ -205,7 +205,10 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
     infoSecurity.classList.remove("active");
     infoShopping.classList.remove("active");
     infoMonitoring.classList.remove("active");
-    logoBGS.classList.add("fade-in");
+
+    if (!logoBGS.classList.contains("fade-in")) {
+      logoBGS.classList.add("fade-in");
+    }
   })
 );
 

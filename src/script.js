@@ -33,12 +33,10 @@ const hideLogo = () => {
       let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
       if (st > lastScrollTop) {
         // down-scroll code
-        logoBGS.style.marginTop = "0rem";
-        logoBGS.style.opacity = "0";
+        logoBGS.classList.remove("fade-in");
       } else if (st < lastScrollTop) {
         // up-scroll code
-        logoBGS.style.marginTop = "5rem";
-        logoBGS.style.opacity = "1";
+        logoBGS.classList.add("fade-in");
       }
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     },
@@ -207,6 +205,7 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) =>
     infoSecurity.classList.remove("active");
     infoShopping.classList.remove("active");
     infoMonitoring.classList.remove("active");
+    logoBGS.classList.add("fade-in");
   })
 );
 

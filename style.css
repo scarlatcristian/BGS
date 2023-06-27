@@ -326,7 +326,7 @@ a {
   width: 100%;
 }
 
-.btn__text-about:hover i {
+.btn__text-about:hover img {
   animation: moveArrowRight 1s;
 }
 
@@ -338,7 +338,7 @@ a {
     width: 80%;
   }
 
-  .btn__text-about:hover i {
+  .btn__text-about:hover img {
     animation: none;
   }
 
@@ -398,15 +398,15 @@ a {
   margin-top: 5rem;
 }
 
-.btn-arrow-up:hover i {
+.btn-arrow-up:hover img {
   animation: moveArrowUp 1s;
 }
 
-.btn-arrow-right:hover i {
+.btn-arrow-right:hover img {
   animation: moveArrowRight 1s;
 }
 
-.btn-arrow-left:hover i {
+.btn-arrow-left:hover img {
   animation: moveArrowLeft 1s;
 }
 
@@ -416,10 +416,10 @@ a {
   }
 
   50% {
-    transform: translateY(-250%);
+    transform: translateY(-150%);
   }
   51% {
-    transform: translateY(250%);
+    transform: translateY(150%);
   }
   100% {
     transform: translateY(0);
@@ -432,10 +432,10 @@ a {
   }
 
   50% {
-    transform: translateX(250%);
+    transform: translateX(150%);
   }
   51% {
-    transform: translateX(-250%);
+    transform: translateX(-150%);
   }
   100% {
     transform: translateX(0);
@@ -459,14 +459,14 @@ a {
 }
 
 @media only screen and (max-width: 75em) {
-  .btn-arrow-up:hover i {
+  .btn-arrow-up:hover img {
     animation: none;
   }
 
-  .btn-arrow-right:hover i {
+  .btn-arrow-right:hover img {
     animation: none;
   }
-  .btn-arrow-left:hover i {
+  .btn-arrow-left:hover img {
     animation: none;
   }
 }
@@ -621,11 +621,11 @@ a {
     font-weight: lighter;
   }
 
-  .btn-arrow-up:hover i {
+  .btn-arrow-up:hover img {
     animation: none;
   }
 
-  .btn-arrow-right:hover i {
+  .btn-arrow-right:hover img {
     animation: none;
   }
 }
@@ -651,7 +651,7 @@ a {
   width: 50%;
 }
 
-.info-security__container--column i {
+.info-security__container--column img {
   color: var(--color-black);
 }
 
@@ -668,6 +668,10 @@ a {
   margin-right: 2rem;
   height: 2rem;
   width: 2rem;
+}
+
+.checkbox img {
+  height: 1.5rem;
 }
 
 .text-checkbox {
@@ -706,7 +710,7 @@ a {
     width: 100%;
   }
 
-  .info-security__container--column i {
+  .info-security__container--column img {
     height: 1.3rem;
     width: 1.3rem;
   }

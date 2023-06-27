@@ -170,7 +170,6 @@ btnFadeText.addEventListener("click", () => {
 btnSecurity.addEventListener("click", () => {
   hideBtn();
 
-  body.style.height = "fit-content";
   body.style.overflowX = "hidden";
   body.style.overflowY = "visible";
 

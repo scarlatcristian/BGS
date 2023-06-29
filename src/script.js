@@ -211,7 +211,7 @@ document.querySelectorAll(".btn-arrow-left").forEach((btn) => {
   });
 });
 
-// going back to explore page when pressing the logo
+// Going back to explore page when pressing the logo
 logoBGS.addEventListener("click", () => {
   if (text.classList.contains("text-fade-out")) {
     text.classList.remove("text-fade-out");

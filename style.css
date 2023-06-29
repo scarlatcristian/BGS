@@ -394,8 +394,13 @@ a {
 /* ////////////////////////////////////////////////////////////////////////// */
 /* Btn hover animation */
 .btn-arrow-left {
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-bottom: 5rem;
+}
+
+.btn-text {
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }
 
 .btn-arrow-up:hover img {

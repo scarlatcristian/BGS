@@ -399,7 +399,7 @@ a {
 }
 
 .btn-text {
-  font-size: 1.5rem;
+  font-size: 3rem;
   margin-top: 2rem;
 }
 
@@ -531,7 +531,7 @@ a {
   transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 56.25em) {
   .card-1 {
     left: 20%;
   }
